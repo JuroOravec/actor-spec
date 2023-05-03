@@ -163,7 +163,7 @@ export interface DatasetOutput<TEntry extends object = any> {
    * }
    * ```
    */
-  exampleEntryComments: Partial<Record<keyof TEntry, string>>;
+  exampleEntryComments?: Partial<Record<keyof TEntry, string>>;
 }
 
 /** Describes which features a given dataset has. */
