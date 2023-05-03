@@ -15,6 +15,8 @@
  *   who are the authors, privacy compliance, etc.
  */
 export interface ActorSpec {
+  /** Currently only version 1 exists */
+  actorspecVersion: number;
   /** Info about the actor itself */
   actor: {
     title: string;
