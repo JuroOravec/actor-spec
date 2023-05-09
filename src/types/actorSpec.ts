@@ -106,6 +106,7 @@ export interface ScraperDataset {
    * ```
    */
   filters: string[];
+  filterCompleteness: DatasetFilterCompleteness;
   /** Scraper modes that impact the pricing, performance, or what kind of data is returned. */
   modes: DatasetModes[];
   /** Describes what features the dataset has. */
@@ -242,3 +243,12 @@ export interface DatasetPerfStat {
   mode: string | null;
   count: number | 'all';
 }
+
+/**
+ * The state of dataset filters:
+ * - `none` - no filters available
+ * - `some` - some filters available
+ * - `full` - all filters that are available in the original web / UI / API are supported
+ * - `extra` - same as `full`, plus extra filters
+ */
+export type DatasetFilterCompleteness = 'none' | 'some' | 'full' | 'extra';
