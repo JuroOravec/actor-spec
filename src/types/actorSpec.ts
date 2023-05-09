@@ -167,8 +167,16 @@ export interface DatasetOutput<TEntry extends object = any> {
   exampleEntryComments?: Partial<Record<keyof TEntry, string>>;
 }
 
-/** Describes which features a given dataset has. */
+/**
+ * Describes what features a given dataset has in a binary
+ * yes/no manner.
+ */
 export interface DatasetFeatures {
+  /**
+   * Whether the scraper can be configured to extract only a certain
+   * number of results.
+   */
+  limitResultsCount: boolean;
   /**
    * Whether the scraper needs browser (e.g. using Playwright or Puppeteer)
    * to interact with the browser.
@@ -195,7 +203,22 @@ export interface DatasetFeatures {
    */
   privacyCompliance: boolean;
   /** Whether the scraper captures and reports errors. */
+  // TODO: More detailed like on which level (whole dataset or per req)
+  //       and URL to the monitoring?
   errorMonitoring: boolean;
+  /**
+   * Whether the scraper detects and notifies on changes to its own
+   * schema changes, or when the scraped website / API changes.
+   */
+  // TODO: More detailed?
+  changeMonitoring: boolean;
+  /**
+   * Whether the scraper supports some way to configure
+   * automation / integration that's triggered after the
+   * scraper has finished.
+   */
+  // TODO: More detailed like webhooks, or custom integration?
+  downstreamAutomation: boolean;
 }
 
 /**
