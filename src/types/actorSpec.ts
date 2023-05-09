@@ -168,11 +168,32 @@ export interface DatasetOutput<TEntry extends object = any> {
 
 /** Describes which features a given dataset has. */
 export interface DatasetFeatures {
+  /**
+   * Whether the scraper needs browser (e.g. using Playwright or Puppeteer)
+   * to interact with the browser.
+   *
+   * Scrapers that don't use browser may be faster.
+   */
   usesBrowser: boolean;
+  /** Whether the scraper allows to configure proxy. */
   proxySupport: boolean;
+  /**
+   * Whether the way the scraper works can be configured -
+   * e.g. retry strategy, rate limiting, etc.
+   */
   configurable: boolean;
+  /**
+   * Whether the scraper is tested on regular basis,
+   * e.g. once per day or week.
+   */
   regularlyTested: boolean;
+  /**
+   * Whether the scraper complies with data / privacy
+   * regulations, e.g. that personal data is omitted or
+   * redacted by default.
+   */
   privacyCompliance: boolean;
+  /** Whether the scraper captures and reports errors. */
   errorMonitoring: boolean;
 }
 
