@@ -204,6 +204,18 @@ export interface DatasetFeatures {
    * redacted by default.
    */
   privacyCompliance: boolean;
+  /**
+   * Whether the scraper offers a way to filter and modify the scraped
+   * data out of the box, without needing other tools.
+   */
+  integratedETL: boolean;
+  /**
+   * Whether the scraper offers a cache that can persist info on scraped entries
+   * across different scraper runs.
+   *
+   * Such cache allows for use cases like scraping only NEW entries.
+   */
+  integratedCache: boolean;
   /** Whether the scraper captures and reports errors. */
   // TODO: More detailed like on which level (whole dataset or per req)
   //       and URL to the monitoring?
