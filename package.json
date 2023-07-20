@@ -1,6 +1,6 @@
 {
   "name": "actor-spec",
-  "version": "0.3.0",
+  "version": "0.4.1",
   "private": false,
   "description": "User-centered definition for bots such as Apify's actors",
   "author": "Juro Oravec <juraj.oravec.josefson@gmail.com>",
